@@ -4,12 +4,12 @@ from framework.page_forms.artists_form import ArtistForm
 from framework.page_forms.search_song_form import SpotifySearchForm
 
 
+@pytest.mark.xdist_group(name="UI")
 class TestSpotifyUI:
     __spotify_home_form: SpotifyHomeForm = SpotifyHomeForm()
     __artist_form: ArtistForm = ArtistForm()
     __search_song_form: SpotifySearchForm = SpotifySearchForm()
 
-    @pytest.mark.ui
     @pytest.mark.parametrize("artist, song", [
         ("Drake", "One Dance"),
         ("The Beatles", "Here Comes The Sun - Remastered 2009")

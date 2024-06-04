@@ -5,6 +5,11 @@ from browser.py_quality_services import PyQualityServices
 from framework.utils.settings_data import SettingsData
 
 
+def pytest_sessionstart(session):
+    PyQualityServices.browser_factory = BrowserFactory()
+    PyQualityServices.get_browser()
+
+
 @pytest.fixture(scope="session", autouse=True)
 def browser(request):
     driver = PyQualityServices.get_browser()
@@ -14,10 +19,7 @@ def browser(request):
     yield driver
     driver.quit()
 
+
 @pytest.fixture(scope="session")
 def spotify_api_client():
     return SpotifyApiSearch()
-
-def pytest_sessionstart(session):
-    PyQualityServices.browser_factory = BrowserFactory()
-    PyQualityServices.get_browser()

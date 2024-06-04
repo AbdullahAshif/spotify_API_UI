@@ -1,6 +1,7 @@
 import pytest
 
 
+@pytest.mark.xdist_group(name="API")
 class TestApi:
     @pytest.mark.parametrize("artist_name, expected_genre", [
         ("Drake", "Rap"),
