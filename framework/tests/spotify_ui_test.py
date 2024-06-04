@@ -9,6 +9,7 @@ class TestSpotifyUI:
     __artist_form: ArtistForm = ArtistForm()
     __search_song_form: SpotifySearchForm = SpotifySearchForm()
 
+    @pytest.mark.ui
     @pytest.mark.parametrize("artist, song", [
         ("Drake", "One Dance"),
         ("The Beatles", "Here Comes The Sun - Remastered 2009")
