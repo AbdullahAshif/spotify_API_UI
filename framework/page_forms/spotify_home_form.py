@@ -1,3 +1,4 @@
+from allure_commons._allure import step
 from forms.base_form import BaseForm
 from browser.py_quality_services import PyQualityServices
 from selenium.webdriver.common.by import By
@@ -16,11 +17,14 @@ class SpotifyHomeForm(BaseForm):
         self.__log_in_btn = self._element_factory.get_button(
         (By.XPATH, ("//span[contains(@class, 'ButtonInner') and text()='Log in']")), "Log in")
 
+    @step("Clicking search button")
     def click_search_btn(self):
         self.__search_btn.click()
 
+    @step("Sending artists name")
     def input_search_field(self, singer_name):
         self.__search_box.clear_and_type(singer_name)
 
+    @step("Clicking login button")
     def click_log_in_btn(self):
         self.__log_in_btn.click()
