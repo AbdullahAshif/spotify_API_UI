@@ -2,9 +2,9 @@ import pytest
 from framework.page_forms.spotify_home_form import SpotifyHomeForm
 from framework.page_forms.artists_form import ArtistForm
 from framework.page_forms.search_song_form import SpotifySearchForm
+from framework.tests.conftest import browser
 
 
-@pytest.mark.xdist_group(name="UI")
 class TestSpotifyUI:
     __spotify_home_form: SpotifyHomeForm = SpotifyHomeForm()
     __artist_form: ArtistForm = ArtistForm()
@@ -14,7 +14,7 @@ class TestSpotifyUI:
         ("Drake", "One Dance"),
         ("The Beatles", "Here Comes The Sun - Remastered 2009")
     ])
-    def test_artist_song(self, artist, song):
+    def test_artist_song(self, artist, song, browser):
         self.__spotify_home_form.click_search_btn()
         self.__spotify_home_form.input_search_field(artist)
         assert self.__artist_form.is_song_exists(song), f"{artist}'s {song} was not found"

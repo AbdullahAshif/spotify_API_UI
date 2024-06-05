@@ -12,7 +12,6 @@ class ArtistForm(BaseForm):
         super(ArtistForm, self).__init__((By.XPATH, LocatorConstants.PRECISE_TEXT_XPATH.format(self.__form_name)),
                                          self.__form_name)
 
-    #   creating pull request
     def is_song_exists(self, song_name):
         song_name = self.__element.get_label((By.XPATH, LocatorConstants.PARTICULAR_TEXT_XPATH.format(song_name)),
                                              "Song")
