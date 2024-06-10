@@ -143,3 +143,6 @@ cython_debug/
 #resources
 #js folder and other folders to ignore
 /resources/js/
+
+#ignore pytest configuration file
+pytest.ini
