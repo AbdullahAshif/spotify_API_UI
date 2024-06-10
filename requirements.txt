@@ -40,7 +40,7 @@ tqdm==4.66.4
 trio==0.25.1
 trio-websocket==0.11.1
 types-cryptography==3.3.23.2
-typing-extensions==3.10.0.2
+typing-extensions==3.8.6
 tzdata==2024.1
 tzlocal==5.2
 uritemplate==4.1.1
