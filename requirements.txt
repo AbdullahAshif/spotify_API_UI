@@ -37,6 +37,7 @@ sortedcontainers
 tqdm
 trio
 trio-websocket
+toml
 typing-extensions
 urllib3
 webdriver-manager
