@@ -6,6 +6,7 @@ from framework.models.artist import Artist
 
 @allure.suite("API Result")
 @pytest.mark.xdist_group(name="API")
+@pytest.mark.api
 class TestApi:
     @pytest.mark.parametrize("artist_name, expected_genre", [
         ("Drake", "Rap"),

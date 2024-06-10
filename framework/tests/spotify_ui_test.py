@@ -10,6 +10,7 @@ from framework.tests.conftest import browser
 
 @allure.suite("UI Result")
 @pytest.mark.xdist_group(name="UI")
+@pytest.mark.ui
 class TestSpotifyUI:
     __spotify_home_form: SpotifyHomeForm = SpotifyHomeForm()
     __artist_form: ArtistForm = ArtistForm()
@@ -25,10 +26,8 @@ class TestSpotifyUI:
     def test_artist_song(self, artist, song, browser):
         self.__spotify_home_form.click_search_btn()
         self.__spotify_home_form.input_search_field(artist)
-        assert self.__artist_form.is_song_exists(song), f"{artist}'s {song} was not found"
-
-        allure.attach(browser.driver.get_screenshot_as_png(), name=f"{artist}_{song}_screenshot",
-                      attachment_type=allure.attachment_type.PNG)
+        with allure.step("Asserting if expected song exists in artists"):
+            assert self.__artist_form.is_song_exists(song), f"{artist}'s {song} was not found"
 
     @pytest.mark.parametrize("artist", [
         "Drake",
