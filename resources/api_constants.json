@@ -1,0 +1,13 @@
+{
+  "HttpStatusConstants": {
+    "OK": 200,
+    "BAD_REQUEST": 400,
+    "NOT_FOUND": 404
+  },
+  "EndPointConstants": {
+    "BASE_API_EP_LOCATOR": "https://api.spotify.com/v1",
+    "TOKEN_URL_LOCATOR": "https://accounts.spotify.com/api/token",
+    "MARKETS_ENDPOINT": "https://api.spotify.com/v1/markets",
+    "SEARCH_ENDPOINT": "https://api.spotify.com/v1/search"
+  }
+}

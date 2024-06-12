@@ -1,0 +1,6 @@
+{
+  "protocol": "https",
+  "domain": "www.spotify.com",
+  "wait": 2,
+  "host": "https://www.spotify.com"
+}
