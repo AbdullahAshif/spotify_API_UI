@@ -155,7 +155,7 @@ venv.bak/
 .mypy_cache/
 .dmypy.json
 dmypy.json
-
+allure-results
 # Pyre type checker
 .pyre/
 
